@@ -1,0 +1,42 @@
+[ui]
+username = Alexis Metaireau <alexis@notmyidea.org>
+ssh = ssh -C
+merge = vimdiff
+
+[defaults]
+addremove = --similarity 100
+
+[alias]
+i. = incoming
+~ = path
+/ = root
+¹ = tip
+^ = update
+! = status
+
+[extensions]
+bookmarks =
+fetch =
+mq =
+graphlog = 
+extdiff =
+color =
+rebase =
+purge =
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
+
+[extdiff]
+cmd.vdiff = vimdiff
+
+[diff]
+git = 1
+
+[tortoisehg]
+hgtkfork = True
+
+[auth]
+bb.prefix = https://bitbucket.org
+bb.username = ametaireau 
