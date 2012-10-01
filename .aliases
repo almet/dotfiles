@@ -2,3 +2,4 @@ alias todo='vim -p ~/do/*'
 alias ack='ack-grep'
 alias i="sudo aptitude install"
 alias s="aptitude search"
+alias p="aptitude show"
