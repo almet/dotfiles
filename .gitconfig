@@ -5,3 +5,5 @@
 	ui = true
 [github]
 	user = ametaireau
+[core]
+	excludesfile = /home/alexis/.gitignore
