@@ -1,6 +1,8 @@
 "" include other configuration files
 source $HOME/.vimrcpy
 set directory=~/.vim/swp        " store the .swp files in a specific path
+set nobackup
+set nowritebackup
 
 "" default values """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -47,7 +49,7 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set list
-set listchars=tab:▸\ 
+set listchars=tab:▸\
 
 "set acd                         " auto change directory
 set laststatus=2                " Always set a status line
