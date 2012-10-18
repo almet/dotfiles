@@ -20,3 +20,11 @@ function upload() {
     scp $@ alexis@172.19.2.119:/home/www/notmyidea.org/.
     echo "http://alexis.notmyidea.org/$@"
 }
+
+function update_zamboni() {
+    export DJANGO_SETTINGS_MODULE='settings_local_mkt'
+    git checkout master && git pull && git submodule update --init --recursive
+    cd vendor && git checkout master && git pull && git submodule update --init && cd ..
+    pip install --no-deps --exists-action=w -r requirements/dev.txt
+    schematic migrations
+}

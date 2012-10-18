@@ -3,3 +3,4 @@ alias ack='ack-grep'
 alias i="sudo aptitude install"
 alias s="aptitude search"
 alias p="aptitude show"
+alias zamboni_tests="python manage.py test --noinput -s --logging-clear-handlers --with-progressive"
