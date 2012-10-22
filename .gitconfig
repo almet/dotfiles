@@ -7,3 +7,11 @@
 	user = ametaireau
 [core]
 	excludesfile = /home/alexis/.gitignore
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 700x550+49+24
+	history-view-vpane-position = 469
+	main-window-view = HistoryView
+	file-view-vpane-position = 356
+[alias]
+co = checkout

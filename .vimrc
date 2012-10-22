@@ -48,8 +48,8 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set list
-set listchars=tab:▸\
+"set list
+"set listchars=tab:▸/
 
 "set acd                         " auto change directory
 set laststatus=2                " Always set a status line

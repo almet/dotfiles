@@ -28,3 +28,13 @@ function update_zamboni() {
     pip install --no-deps --exists-action=w -r requirements/dev.txt
     schematic migrations
 }
+
+function merge_pull_request() {
+    echo $1
+    git remote add $1 git://github.com/$1/$2.git
+    git fetch $1
+    git checkout $3
+    git rebase master
+    git checkout master
+    git merge $3
+}
