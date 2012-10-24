@@ -6,7 +6,7 @@ set nowritebackup
 
 "" default values """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme slate               " peachpuff is good too
+colorscheme peachpuff "slate
 "set mouse=a
 syntax on                       " syntax highlighting
 filetype off                    " to consider filetypes
