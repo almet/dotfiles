@@ -38,3 +38,8 @@ function merge_pull_request() {
     git checkout master
     git merge $1/$3
 }
+
+function pelican_regenerate() {
+    LC_ALL="C" pelican -o tests/output/custom/ -s samples/pelican.conf.py samples/content/
+    LC_ALL="C" USER="Dummy Author" pelican -o tests/output/basic/ samples/content/
+}
