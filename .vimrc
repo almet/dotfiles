@@ -22,7 +22,7 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set visualbell
+set novisualbell
 set cursorline
 set ttyfast
 set ruler
@@ -129,6 +129,9 @@ map <Leader>0 yypVr#
 map <Leader>1 yypVr=
 map <Leader>2 yypVr-
 map <Leader>3 yypVr~
+
+" find merge conflicts
+map <Leader>m /\<\<<CR>
 
 map <silent> <Leader>n ]S
 map <silent> <Leader>p [S
