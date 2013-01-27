@@ -1,5 +1,0 @@
-#!/usr/bin/python
-
-import requests
-
-print requests.get('http://haikumachine.herokuapp.com/').json['text']
