@@ -23,6 +23,8 @@ extdiff =
 color =
 rebase =
 purge =
+churn =
+hgview =
 
 [merge-tools]
 vimdiff.executable = vim
@@ -37,6 +39,6 @@ git = 1
 [tortoisehg]
 hgtkfork = True
 
-[auth]
-bb.prefix = https://bitbucket.org
-bb.username = ametaireau 
+;[auth]
+;bb.prefix = https://bitbucket.org
+;bb.username = ametaireau 

@@ -1,16 +1,19 @@
 "" include other configuration files
 source $HOME/.vimrcpy
 set directory=~/.vim/swp        " store the .swp files in a specific path
-set nobackup
-set nowritebackup
+set backupdir=~/.vim/tmp
 
 "" default values """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call pathogen#runtime_append_all_bundles()
 
-colorscheme peachpuff "slate
+colorscheme zellner "koehler peachpuff slate
+"set background=dark
+"let g:solarized_termcolors=16
+set t_Co=16
+"colorscheme solarized
 "set mouse=a
 syntax on                       " syntax highlighting
 filetype off                    " to consider filetypes
-call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 set nocompatible
 
@@ -58,15 +61,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" keep the visual selection after indenting
+vmap > >gv
+vmap < <gv
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -74,7 +72,7 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
-au FocusLost * :wa
+" au FocusLost * :wa
 
 "" remove trainling slashes with w
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -94,13 +92,18 @@ au BufRead,BufNewFile *.c set noexpandtab
 au BufRead,BufNewFile *.h set noexpandtab
 au BufRead,BufNewFile Makefile* set noexpandtab
 
+au BufRead,BufNewFile *.jsm set filetype=javascript
+au FileType go au BufWritePre <buffer> Fmt
+
+set rtp+=$GOROOT/misc/vim
+
 "" shortcuts """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>t :TlistToggle<CR>
 nnoremap <A-l> gt
 nnoremap <A-h> gT
-" add spellchecking on ,c
+" add spellchecking on ,<lang>
 nnoremap <leader>fr :setlocal spell spelllang=fr<CR>
 nnoremap <leader>en :setlocal spell spelllang=en<CR>
 
@@ -108,7 +111,7 @@ nnoremap <leader>en :setlocal spell spelllang=en<CR>
 command WW w !sudo tee % > /dev/null
 
 " edit vim quickly
-nnoremap <leader>v <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>v :tabnew $MYVIMRC<cr>:gt
 map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo'vimrc reloaded'"<CR>
 
 " remap CTRL+N to CTRL + space
@@ -157,6 +160,18 @@ let tlist_css_settings = 'css;e:SECTIONS'
 " NerdTree configuration
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 let NERDChristmasTree = 1
+
+" jedi config
+let g:jedi#popup_on_dot = 0
+set completeopt=menuone,longest,preview
+
+" vim session
+let g:session_autosave_periodic = 2
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+
+" ctrlp
+set wildignore+=*/tmp/*,*.pyc,*.pyo,*.zip
 
 nnoremap <silent> <F3> :YRShow<cr>
 inoremap <silent> <F3> <ESC>:YRShow<cr>

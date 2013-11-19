@@ -23,7 +23,7 @@ function upload() {
 
 function update_zamboni() {
     export DJANGO_SETTINGS_MODULE='settings_local_mkt'
-    git checkout master && git pull && git submodule update --init --recursive
+    git checkout $1 && git pull && git submodule update --init --recursive
     cd vendor && git checkout master && git pull && git submodule update --init && cd ..
     pip install --no-deps --exists-action=w -r requirements/dev.txt
     schematic migrations
@@ -40,6 +40,17 @@ function merge_pull_request() {
 }
 
 function pelican_regenerate() {
-    LC_ALL="C" pelican -o tests/output/custom/ -s samples/pelican.conf.py samples/content/
-    LC_ALL="C" USER="Dummy Author" pelican -o tests/output/basic/ samples/content/
+    LC_ALL="C" pelican -o pelican/tests/output/custom/ -s samples/pelican.conf.py samples/content/
+    LC_ALL="C" pelican -o pelican/tests/output/basic/ samples/content/
+    # USER="Dummy Author" pelican -o tests/output/basic/ samples/content/
+}
+
+function update_theme() {
+    git submodule foreach git pull && git commit docs/source/_themes/mozilla -m "update mozilla sphinx theme" && git push origin master
+}
+
+function marker() {
+    echo "###################"
+    echo "#####    ⋅    #####"
+    echo "###################"
 }
