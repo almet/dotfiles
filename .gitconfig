@@ -15,3 +15,5 @@
 	file-view-vpane-position = 356
 [alias]
 co = checkout
+[push]
+	default = simple

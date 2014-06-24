@@ -1,10 +1,12 @@
 alias todo='vim -p ~/do/*'
 alias ack='ack-grep'
 alias i="sudo aptitude install"
+alias brew="i"
 alias s="aptitude search"
 alias p="aptitude show"
 alias zamboni_tests="python manage.py test --noinput -s --logging-clear-handlers --with-progressive"
 alias diary="vim /home/alexis/Documents/perso/`date +%Y-%m-%d`.rst"
+alias notes="vim /home/alexis/dev/github.com/notes/`date +%Y-%m-%d`.rst"
 alias aspiresite="wget -r -k -np"
 alias dj="python manage.py"
 alias json="python -m json.tool"

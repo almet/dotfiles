@@ -6,7 +6,7 @@ set backupdir=~/.vim/tmp
 "" default values """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call pathogen#runtime_append_all_bundles()
 
-colorscheme zellner "koehler peachpuff slate
+colorscheme peachpuff "zellner koehler peachpuff slate
 "set background=dark
 "let g:solarized_termcolors=16
 set t_Co=16
@@ -15,6 +15,7 @@ set t_Co=16
 syntax on                       " syntax highlighting
 filetype off                    " to consider filetypes
 filetype plugin indent on
+filetype plugin on
 set nocompatible
 
 set encoding=utf-8
@@ -56,9 +57,9 @@ set formatoptions=qrn1
 
 "set acd                         " auto change directory
 set laststatus=2                " Always set a status line
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " keep the visual selection after indenting
