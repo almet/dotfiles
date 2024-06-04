@@ -1,8 +1,12 @@
 [includeIf "gitdir:~/dev/**/.git"]
-    path = .gitconfig-user
+    path = ~/.git/config-user
 
 [includeIf "gitdir:~/dev/fpf/**/.git"]
-    path = ~/.gitconfig-fpf
+    path = ~/.git/config-fpf
 
 [commit]
 	gpgsign = true
+[push]
+	autoSetupRemote = true
+[core]
+	hooksPath = ~/.git/hooks
