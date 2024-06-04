@@ -1,0 +1,8 @@
+[includeIf "gitdir:~/dev/**/.git"]
+    path = .gitconfig-user
+
+[includeIf "gitdir:~/dev/fpf/**/.git"]
+    path = ~/.gitconfig-fpf
+
+[commit]
+	gpgsign = true
