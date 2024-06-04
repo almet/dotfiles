@@ -11,5 +11,6 @@
 [core]
 	hooksPath = ~/.git/hooks
 	editor = hx
+	excludesFile = ~/.git/ignore
 [alias]
 	undo = reset HEAD~
