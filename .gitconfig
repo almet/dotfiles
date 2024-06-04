@@ -11,3 +11,5 @@
 [core]
 	hooksPath = ~/.git/hooks
 	editor = hx
+[alias]
+	undo = reset HEAD~
