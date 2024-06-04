@@ -1,0 +1,35 @@
+# [[language]]
+# name = "python"
+# language-servers = [{ command = "pylsp"}]
+# formatter = { command = "ruff format", args = ["--quiet", "-"] }
+# auto-format = true
+# 
+[language-server.pylsp.config.plugins]
+pyls_isort = {enabled = true}
+ruff = {enabled = true, extendSelect = ["I"]}
+rope_autoimport = {enabled = true}
+mypy = {enabled = true, live_mode = true, strict = true}
+# pyflakes = {enabled = false}
+# mccabe = {enabled = false}
+# pycodestyle = {enabled = false, maxLineLength = 88}
+# pydocstyle = {enabled = false}
+# autopep8 = {enabled = false}
+# yapf = {enabled = false}
+# flake8 = {enabled = false}
+# pylint = {enabled = false}
+
+[language-server.pylsp.config]
+auto-format = true
+
+# [language-server.mpdls]
+# command = "/Users/alexis/.cargo/bin/mdpls"
+# config = { markdown.preview.auto = true }
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+auto-format = true

@@ -1,0 +1,9 @@
+theme='bogster'
+
+[editor]
+auto-format = true
+text-width = 80
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
