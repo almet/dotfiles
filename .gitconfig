@@ -10,3 +10,4 @@
 	autoSetupRemote = true
 [core]
 	hooksPath = ~/.git/hooks
+	editor = hx
